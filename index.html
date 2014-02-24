@@ -1,12 +1,13 @@
 <html>
  <head>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="http://192.168.1.102:3000/socket.io/socket.io.js"></script>
 <script type="text/javascript">
 
   $(document).ready(function(){
 	alert("sdsad");
-});
+ });
+
   var socket = io.connect('http://192.168.1.102:3000/');
   socket.on('news', function (data) {
     $("#container").append(data.hello+"<br/>");
