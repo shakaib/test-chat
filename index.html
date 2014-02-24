@@ -1,0 +1,26 @@
+<html>
+ <head>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://shakaibhasan.kd.io:3000/');
+  socket.on('news', function (data) {
+    $("#container").append(data.hello+"<br/>");
+   
+  });
+  
+  $("#send").live("click",function(){
+      socket.emit("my other event", {text : $("#name").val()});
+      $("#container").append($("#name").val()+"<br/>");
+      $("#name").val("");
+  })
+  
+</script>
+ </head>
+<body>
+<h1> Type IN Me  </h1>
+<div id = 'container'></div>
+<input type = "text" id = "name"/>
+<input type = "button" value = "send" id = "send"/>
+</body>
+</html>
