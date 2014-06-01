@@ -1,0 +1,91 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <script src="js/jquery-2.0.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="http://192.168.0.102:3000/socket.io/socket.io.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
+        
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="offcanvas.css">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+    
+    <div class="container">
+      <div  id = "connection" class="highlight">
+      
+      </div>
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button id = "list-buddies" data-toggle="offcanvas" class="btn btn-primary btn-xs" type="button">Buddies</button>
+          </p>
+          
+      <div class="panel panel-primary">  
+        <div class="panel-heading"> 
+              <span class="glyphicon glyphicon-comment"></span> Chat                   
+        </div>
+        <div class="panel-body main-container" >
+          <!-- <ul class="chat">
+              <li class="left clearfix">
+                <span class="chat-img pull-left">
+                 <img class="img-circle" alt="User Avatar" src="U.gif">
+                </span>
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <strong class="primary-font">Jack Sparrow</strong>
+                    <small class="pull-right text-muted">
+                    <span class="glyphicon glyphicon-time"></span>
+                    12 mins ago</small>
+                  </div>
+                  <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare                                    dolor, quis ullamcorper ligula sodales.                                </p>
+                </div>
+                </li>
+          </ul> -->
+        </div>
+        <div class="panel-footer">
+          <div class="input-group">
+            <input type="text" placeholder="Type your message here..." class="form-control input-sm" id="name">
+              <span class="input-group-btn">
+                <button id="send" class="btn btn-warning btn-sm">Send</button>
+              </span>
+          </div>
+        </div>
+    </div>
+  </div><!--/span-->
+
+        <div role="navigation" id="sidebar" class="col-xs-6 col-sm-3 sidebar-offcanvas">
+          <div class="list-group" style="min-height:300px;overflow-y:auto;">
+            
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+    </div><!--/.container-->
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="offcanvas.js"></script>
+    <script src="chat.js"></script>
+  
+
+</body></html>
