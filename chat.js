@@ -51,7 +51,7 @@ id = id + Math.floor((Math.random() * 10000) + 1);
 
 var name = "shakaib";
 
-var socket = io.connect('192.168.0.102:3000/');
+var socket = io.connect('192.168.0.100:3000/');
 
 socket.emit("handshake", {client_id : id});
 
