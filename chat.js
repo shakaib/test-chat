@@ -10,6 +10,10 @@ function check_if_container_exist(id){
 	return false;
 }
 
+function hide_notification(){
+	setTimeout( "$('#notification').slideUp();",2000 );
+}
+
 function make_container(id){
 	// $(".main-container").append("<div class = 'contianer-client' style = 'display:none;' id = 'container-"+id+"'></div>");
 	$(".main-container").append("<ul class='contianer-client chat' style = 'display:none;'  id = 'container-"+id+"' ></ul>");
@@ -23,6 +27,7 @@ function parase_message_add_to_id(data,me){
 	else{
 		$("#container-"+data.from).append("<li class='left clearfix' ><span class='chat-img pull-left'><img class='img-circle' alt='User Avatar' src='U.gif'></span><div class='chat-body clearfix'><p>"+data.msg+"</p></div></li>");
 	}
+	$("html, body").animate({ scrollTop: $(".panel-body").scrollTop($(".panel-body").height()) }, 2500);
 }
 function append_to_container(data){
 	if (! check_if_container_exist(data.from)){
@@ -68,7 +73,8 @@ socket.on('base-channel', function (data) {
 	// 	};
 	// }
 	else if (data.hello === "Connected."){
-			 $("#connection").append("<p class = 'bg-info'>"+data.hello+"</p>");	
+			 $("#connection").append("<p class = 'bg-info' id = 'notification'>"+data.hello+"</p>");
+			 hide_notification();	
 	}
 	else{
 				 $("#container").append("<p class = 'bg-success'>"+data.hello+"</p>");
